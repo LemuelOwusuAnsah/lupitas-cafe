@@ -4,9 +4,367 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lupita's Cafe · Harlow, Essex</title>
-  <!-- paste the full HTML you were given here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1210;
+      color: #f5e6d3;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+      background: radial-gradient(circle at 30% 40%, rgba(255, 215, 150, 0.08) 0%, transparent 45%),
+                  radial-gradient(circle at 80% 70%, rgba(210, 150, 100, 0.06) 0%, transparent 50%),
+                  #1a1210;
+    }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-cursive { font-family: 'Great Vibes', cursive; }
+    .max-w-6xl { max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+    .flex { display: flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .items-end { align-items: flex-end; }
+    .items-baseline { align-items: baseline; }
+    .justify-between { justify-content: space-between; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-5 { gap: 1.25rem; }
+    .gap-8 { gap: 2rem; }
+    .gap-10 { gap: 2.5rem; }
+    .gap-16 { gap: 4rem; }
+    .grid { display: grid; }
+    .grid-cols-1 { grid-template-columns: 1fr; }
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+      .md\:pt-16 { padding-top: 4rem; }
+      .md\:pb-32 { padding-bottom: 8rem; }
+      .md\:text-7xl { font-size: 4.5rem; line-height: 1.1; }
+    }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+    .py-3\.5 { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .pt-4 { padding-top: 1rem; }
+    .pt-12 { padding-top: 3rem; }
+    .pb-4 { padding-bottom: 1rem; }
+    .pb-24 { padding-bottom: 6rem; }
+    .pb-28 { padding-bottom: 7rem; }
+    .mt-1 { margin-top: 0.25rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-12 { margin-top: 3rem; }
+    .mb-2 { margin-top: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mr-1 { margin-right: 0.25rem; }
+    .mr-2 { margin-right: 0.5rem; }
+    .space-x-5 > * + * { margin-left: 1.25rem; }
+    .space-x-10 > * + * { margin-left: 2.5rem; }
+    .space-y-8 > * + * { margin-top: 2rem; }
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .w-5 { width: 1.25rem; }
+    .text-xs { font-size: 0.75rem; }
+    .text-sm { font-size: 0.875rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-5xl { font-size: 3rem; }
+    .text-6xl { font-size: 3.75rem; }
+    .font-light { font-weight: 300; }
+    .font-medium { font-weight: 500; }
+    .italic { font-style: italic; }
+    .tracking-wide { letter-spacing: 0.025em; }
+    .tracking-wider { letter-spacing: 0.05em; }
+    .tracking-widest { letter-spacing: 0.1em; }
+    .tracking-\[0\.2em\] { letter-spacing: 0.2em; }
+    .uppercase { text-transform: uppercase; }
+    .leading-relaxed { line-height: 1.625; }
+    .leading-\[1\.1\] { line-height: 1.1; }
+    .text-center { text-align: center; }
+    .text-amber-100\/60 { color: rgba(255, 237, 213, 0.6); }
+    .text-amber-100\/70 { color: rgba(255, 237, 213, 0.7); }
+    .text-amber-100\/90 { color: rgba(255, 237, 213, 0.9); }
+    .text-amber-100\/95 { color: rgba(255, 237, 213, 0.95); }
+    .text-amber-200\/50 { color: rgba(254, 215, 170, 0.5); }
+    .text-amber-200\/60 { color: rgba(254, 215, 170, 0.6); }
+    .text-amber-200\/80 { color: rgba(254, 215, 170, 0.8); }
+    .text-amber-200\/90 { color: rgba(254, 215, 170, 0.9); }
+    .text-amber-300\/40 { color: rgba(252, 211, 77, 0.4); }
+    .text-amber-300\/50 { color: rgba(252, 211, 77, 0.5); }
+    .text-amber-300\/60 { color: rgba(252, 211, 77, 0.6); }
+    .text-amber-300\/70 { color: rgba(252, 211, 77, 0.7); }
+    .text-amber-300\/80 { color: rgba(252, 211, 77, 0.8); }
+    .text-amber-300\/90 { color: rgba(252, 211, 77, 0.9); }
+    .text-amber-400\/70 { color: rgba(251, 191, 36, 0.7); }
+    .text-amber-400\/80 { color: rgba(251, 191, 36, 0.8); }
+    .text-amber-500\/50 { color: rgba(245, 158, 11, 0.5); }
+    .text-amber-500\/60 { color: rgba(245, 158, 11, 0.6); }
+    .text-amber-700\/30 { color: rgba(180, 83, 9, 0.3); }
+    .text-amber-800\/40 { color: rgba(146, 64, 14, 0.4); }
+    .bg-amber-800\/80 { background-color: rgba(146, 64, 14, 0.8); }
+    .bg-amber-950\/20 { background-color: rgba(69, 26, 3, 0.2); }
+    .bg-amber-950\/40 { background-color: rgba(69, 26, 3, 0.4); }
+    .border { border: 1px solid; }
+    .border-b { border-bottom: 1px solid; }
+    .border-t { border-top: 1px solid; }
+    .border-amber-600\/40 { border-color: rgba(217, 119, 6, 0.4); }
+    .border-amber-700\/50 { border-color: rgba(180, 83, 9, 0.5); }
+    .border-amber-800\/30 { border-color: rgba(146, 64, 14, 0.3); }
+    .border-amber-800\/50 { border-color: rgba(146, 64, 14, 0.5); }
+    .border-amber-900\/20 { border-color: rgba(120, 53, 15, 0.2); }
+    .border-amber-900\/30 { border-color: rgba(120, 53, 15, 0.3); }
+    .border-amber-900\/40 { border-color: rgba(120, 53, 15, 0.4); }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-3xl { border-radius: 1.5rem; }
+    .rounded-\[2\.5rem\] { border-radius: 2.5rem; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .fixed { position: fixed; }
+    .-inset-4 { top: -1rem; right: -1rem; bottom: -1rem; left: -1rem; }
+    .bottom-6 { bottom: 1.5rem; }
+    .right-6 { right: 1.5rem; }
+    .overflow-hidden { overflow: hidden; }
+    .backdrop-blur-sm { backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+    .blur-2xl { filter: blur(40px); }
+    .aspect-square { aspect-ratio: 1 / 1; }
+    .object-cover { object-fit: cover; }
+    .bg-gradient-to-tr { background-image: linear-gradient(to top right, var(--tw-gradient-stops)); }
+    .from-amber-900\/20 { --tw-gradient-from: rgba(120, 53, 15, 0.2); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(120, 53, 15, 0)); }
+    .to-orange-900\/10 { --tw-gradient-to: rgba(124, 45, 18, 0.1); }
+    .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+    .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
+    .duration-300 { transition-duration: 300ms; }
+    .hover\:bg-amber-700\/90:hover { background-color: rgba(180, 83, 9, 0.9); }
+    .hover\:border-amber-500\/70:hover { border-color: rgba(245, 158, 11, 0.7); }
+    .hover\:text-amber-100:hover { color: rgba(255, 237, 213, 1); }
+    .hover\:text-amber-200:hover { color: rgba(254, 215, 170, 1); }
+    .hover\:text-amber-300:hover { color: rgba(252, 211, 77, 1); }
+    .card-glow { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+    .card-glow:hover { transform: translateY(-4px); box-shadow: 0 20px 30px -10px rgba(210, 140, 70, 0.15); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; width: 0%; height: 1.5px; bottom: -4px; left: 0; background: #c49a6c; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .rotate-90 { transform: rotate(90deg); }
+    .origin-bottom-right { transform-origin: bottom right; }
+    .hidden { display: none; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .menu-image { width: 100%; height: 12rem; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; border: 1px solid rgba(120, 53, 15, 0.3); }
+    .footer-icon { width: 2.5rem; height: 2.5rem; object-fit: cover; border-radius: 0.5rem; border: 1px solid rgba(146, 64, 14, 0.4); }
+    .vinyl-image { width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; }
+    .hamburger-btn { background: none; border: 1px solid rgba(146, 64, 14, 0.5); border-radius: 0.75rem; padding: 0.6rem 0.75rem; cursor: pointer; display: flex; flex-direction: column; justify-content: center; gap: 5px; transition: border-color 0.3s ease, background-color 0.3s ease; backdrop-filter: blur(4px); background-color: rgba(69, 26, 3, 0.2); }
+    .hamburger-btn:hover { border-color: rgba(217, 119, 6, 0.7); background-color: rgba(69, 26, 3, 0.4); }
+    .hamburger-line { display: block; width: 22px; height: 2px; background-color: rgba(252, 211, 77, 0.8); border-radius: 2px; transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.25s ease; }
+    .hamburger-btn.active .hamburger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn.active .hamburger-line:nth-child(2) { opacity: 0; }
+    .hamburger-btn.active .hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s ease; opacity: 0; }
+    .mobile-menu.open { max-height: 320px; opacity: 1; }
+    .mobile-menu a { display: block; padding: 0.9rem 0; font-size: 0.95rem; letter-spacing: 0.05em; color: rgba(255, 237, 213, 0.7); border-bottom: 1px solid rgba(120, 53, 15, 0.2); transition: color 0.3s ease, padding-left 0.3s ease; }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: rgba(252, 211, 77, 0.95); padding-left: 0.5rem; }
+    .location-pill { display: none; }
+    .full-menu-link { font-family: 'Great Vibes', cursive; font-style: italic; font-size: 2.25rem; line-height: 1; color: rgba(252, 211, 77, 0.75); transition: color 0.35s ease, letter-spacing 0.35s ease; letter-spacing: 0.02em; display: inline-block; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(180, 83, 9, 0.4); }
+    .full-menu-link:hover { color: rgba(254, 215, 170, 1); letter-spacing: 0.05em; }
+    @media (min-width: 768px) {
+      .location-pill { display: block; }
+      .hamburger-btn { display: none; }
+      .full-menu-link { font-size: 2.75rem; }
+    }
+  </style>
 </head>
 <body>
-  <!-- ... rest of Lupita's Cafe markup ... -->
+
+  <header class="max-w-6xl py-8">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-playfair tracking-wide text-amber-200/90">Lupita's</div>
+      <nav class="hidden md:flex space-x-10 text-sm font-light tracking-wider text-amber-100/70">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Our Story</a>
+        <a href="#" class="nav-link">Menu</a>
+        <a href="#" class="nav-link">Visit</a>
+      </nav>
+      <div class="location-pill text-amber-200/60 text-sm border border-amber-800/50 px-4 py-1.5 rounded-full backdrop-blur-sm bg-amber-950/20">Harlow, Essex</div>
+      <button class="hamburger-btn md:hidden" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div class="mobile-menu md:hidden" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#">Our Story</a>
+      <a href="#">Menu</a>
+      <a href="#">Visit</a>
+    </div>
+  </header>
+
+  <section class="max-w-6xl pt-12 pb-24 md:pt-16 md:pb-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8">
+        <div class="inline-block px-4 py-1.5 rounded-full text-xs tracking-widest bg-amber-950/40 border border-amber-800/40 text-amber-300/80 uppercase backdrop-blur-sm">Slow brews · Smooth grooves</div>
+        <h1 class="font-playfair text-6xl md:text-7xl leading-[1.1] font-medium text-amber-100/95">
+          Lupita's<br>
+          <span class="italic text-amber-300/90">café</span>
+        </h1>
+        <p class="text-lg text-amber-100/60 max-w-md font-light leading-relaxed">
+          A quiet corner in Harlow where the espresso flows like a slow jam.
+          R&B on vinyl, velvet mornings, and the kind of chill that lingers.
+        </p>
+        <div class="flex flex-wrap gap-5 pt-4">
+          <a href="#" class="bg-amber-800/80 hover:bg-amber-700/90 text-amber-50 text-sm tracking-wide px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg shadow-amber-900/30 border border-amber-600/40 backdrop-blur-sm">See our menu</a>
+          <a href="#" class="border border-amber-700/50 hover:border-amber-500/70 text-amber-200/80 hover:text-amber-100 text-sm tracking-wide px-8 py-3.5 rounded-full transition-all duration-300 backdrop-blur-sm">Book a table</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-tr from-amber-900/20 to-orange-900/10 rounded-[2.5rem] blur-2xl"></div>
+        <div class="relative bg-[#231b18]/80 backdrop-blur-sm rounded-3xl p-4 border border-amber-900/40 shadow-2xl card-glow overflow-hidden">
+          <div class="aspect-square rounded-2xl overflow-hidden border border-amber-800/30">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop&auto=format&q=80" alt="Espresso being poured" class="vinyl-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl pb-28">
+    <div class="flex items-end justify-between mb-12">
+      <h2 class="font-playfair text-4xl md:text-5xl text-amber-100/90">
+        <span class="text-amber-400/80">·</span> slow sips
+      </h2>
+      <span class="text-xs tracking-widest text-amber-500/50 uppercase">lupita's selection</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="space-y-8">
+        <div class="border-b border-amber-900/30 pb-4">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&h=300&fit=crop&auto=format&q=80" alt="Velvet latte" class="menu-image">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <h3 class="text-xl font-playfair text-amber-200/90">Velvet Latte</h3>
+              <p class="text-amber-300/40 text-sm mt-1">double shot · oat milk · raw honey</p>
+            </div>
+            <span class="text-amber-300/70 font-light">£4.2</span>
+          </div>
+        </div>
+        <div class="border-b border-amber-900/30 pb-4">
+          <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600&h=300&fit=crop&auto=format&q=80" alt="Midnight mocha" class="menu-image">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <h3 class="text-xl font-playfair text-amber-200/90">Midnight Mocha</h3>
+              <p class="text-amber-300/40 text-sm mt-1">70% dark · cinnamon · oat whip</p>
+            </div>
+            <span class="text-amber-300/70 font-light">£4.8</span>
+          </div>
+        </div>
+        <div class="border-b border-amber-900/30 pb-4">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=300&fit=crop&auto=format&q=80" alt="Pour over coffee" class="menu-image">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <h3 class="text-xl font-playfair text-amber-200/90">Vinyl Drip</h3>
+              <p class="text-amber-300/40 text-sm mt-1">rotating single origin · black or with cream</p>
+            </div>
+            <span class="text-amber-300/70 font-light">£3.5</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <div class="border-b border-amber-900/30 pb-4">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&h=300&fit=crop&auto=format&q=80" alt="Banana bread" class="menu-image">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <h3 class="text-xl font-playfair text-amber-200/90">Brown Butter Banana Bread</h3>
+              <p class="text-amber-300/40 text-sm mt-1">toasted · sea salt · warm</p>
+            </div>
+            <span class="text-amber-300/70 font-light">£3.8</span>
+          </div>
+        </div>
+        <div class="border-b border-amber-900/30 pb-4">
+          <img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=600&h=300&fit=crop&auto=format&q=80" alt="Scone" class="menu-image">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <h3 class="text-xl font-playfair text-amber-200/90">Sade's Scone</h3>
+              <p class="text-amber-300/40 text-sm mt-1">berry compote · clotted cream</p>
+            </div>
+            <span class="text-amber-300/70 font-light">£4.2</span>
+          </div>
+        </div>
+        <div class="border-b border-amber-900/30 pb-4">
+          <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&h=300&fit=crop&auto=format&q=80" alt="Chai latte" class="menu-image">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <h3 class="text-xl font-playfair text-amber-200/90">Erykah's Chai</h3>
+              <p class="text-amber-300/40 text-sm mt-1">house blend · oat · star anise</p>
+            </div>
+            <span class="text-amber-300/70 font-light">£3.9</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="#" class="full-menu-link">full menu</a>
+    </div>
+  </section>
+
+  <footer class="border-t border-amber-900/30">
+    <div class="max-w-6xl py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <div class="text-2xl font-playfair text-amber-200/80 mb-4">Lupita's</div>
+          <p class="text-amber-200/40 text-sm leading-relaxed max-w-xs">A slow coffee shop in Harlow. Vinyl on the turntable, always.</p>
+        </div>
+        <div>
+          <div class="text-amber-300/50 text-xs tracking-[0.2em] uppercase mb-4">find us</div>
+          <ul class="space-y-2 text-sm text-amber-200/50 font-light">
+            <li>12 Sun Street, Harlow, Essex</li>
+            <li>Mon–Sat 8am–6pm · Sun 10am–4pm</li>
+            <li>01279 000 000</li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-amber-300/50 text-xs tracking-[0.2em] uppercase mb-4">the vibe</div>
+          <div class="flex space-x-5">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&h=100&fit=crop&auto=format&q=80" alt="Instagram" class="footer-icon">
+            <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=100&h=100&fit=crop&auto=format&q=80" alt="Spotify" class="footer-icon">
+            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=100&h=100&fit=crop&auto=format&q=80" alt="Podcast" class="footer-icon">
+          </div>
+          <p class="text-amber-200/30 text-xs mt-6 italic">"where the coffee is slow and the soul is warm"</p>
+        </div>
+      </div>
+      <div class="text-center text-amber-800/40 text-xs mt-12 pt-6 border-t border-amber-900/20">© 2025 Lupita's Café · Harlow, Essex · brewed with love & vinyl</div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-6 right-6 text-amber-700/30 text-xs rotate-90 origin-bottom-right hidden lg:block">slow spin</div>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburgerBtn.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
